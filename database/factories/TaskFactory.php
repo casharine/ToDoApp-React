@@ -16,8 +16,13 @@ class TaskFactory extends Factory
      */
     public function definition()
     {
-        return [
-            //
+        return [ 
+            // 15-40文字のテキストを自動生成
+            'title' => $this->faker->realText(round(15,40)),
+            //  10%true
+            'is_done' => $this->faker->boolean(10),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }
